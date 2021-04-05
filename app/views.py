@@ -7,12 +7,15 @@ This file creates your application.
 
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+from flask_cors import cross_origin
+
+
 
 
 ###
 # Routing for your application.
 ###
-
+#@cross_origin()
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):
